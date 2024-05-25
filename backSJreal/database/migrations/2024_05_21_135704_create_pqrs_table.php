@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pqrs', function (Blueprint $table) {
-            $table->integer('id_PQRS')->primary();
-            $table->integer('pqrs_id_usuario')->index('fk_pqrs_usuarios1');
+            $table->unsignedBigInteger('id_PQRS')->primary();
+            $table->unsignedBigInteger('pqrs_id_usuario')->index('fk_pqrs_usuarios1');
             $table->dateTime('fecha_pqrs')->nullable();
             $table->string('tipo_pqrs', 45)->nullable();
             $table->longText('descripcion_pqrs')->nullable();

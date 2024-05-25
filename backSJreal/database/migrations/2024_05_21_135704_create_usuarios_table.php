@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->integer('id_usuario')->primary();
-            $table->integer('usuario_id_persona')->index('fk_usuarios_personas1');
+            $table->unsignedBigInteger('id_usuario',true);//->primary();
+            $table->unsignedBigInteger('usuario_id_persona')->index('fk_usuarios_personas1');
             $table->string('contrasena_usuario', 20);
             $table->string('nombre_usuario', 45);
-            $table->integer('roles_has_usuarios_id_rol_usuario');
             
             $table->timestamps();
             $table->softDeletes();

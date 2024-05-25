@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sucursales', function (Blueprint $table) {
-            $table->integer('id_sucursal', true);
-            $table->integer('sucursal_id_usuario')->index('fk_sucursal_usuarios1');
+            $table->unsignedBigInteger('id_sucursal', true);
+            $table->unsignedBigInteger('sucursal_id_usuario')->index('fk_sucursal_usuarios1');
             $table->string('NIT_sucursal', 15);
             $table->string('nombre_sucursal', 50);
-            $table->enum('departamento_sucursal', ['Amazonas', 'Antioquia', 'Arauca', 'Atlántico', 'Bolívar', 'Boyacá', 'Caldas', 'Caquetá', 'Casanare', 'Cauca', 'Cesar', 'Chocó', 'Córdoba', 'Cundinamarca', 'Guainía', 'Guaviare', 'Huila', 'La Guajira', 'Magdalena', 'Meta', 'Nariño', 'Norte de Santander', 'Putumayo', 'Quindío', 'Risaralda', 'San Andrés y Providencia', 'Santander', 'Sucre', 'Tolima', 'Valle del Cauca', 'Vaupés', 'Vichada']);
+            $table->enum('departamento_sucursal', ['Amazonas', 'Antioquia', 'Arauca', 'Bogotá D.C', 'Atlántico', 'Bolívar', 'Boyacá', 'Caldas', 'Caquetá', 'Casanare', 'Cauca', 'Cesar', 'Chocó', 'Córdoba', 'Cundinamarca', 'Guainía', 'Guaviare', 'Huila', 'La Guajira', 'Magdalena', 'Meta', 'Nariño', 'Norte de Santander', 'Putumayo', 'Quindío', 'Risaralda', 'San Andrés y Providencia', 'Santander', 'Sucre', 'Tolima', 'Valle del Cauca', 'Vaupés', 'Vichada']);
             $table->string('cuidad_sucursal', 50);
             $table->integer('calle_sucursal');
             $table->integer('carrera_sucursal');

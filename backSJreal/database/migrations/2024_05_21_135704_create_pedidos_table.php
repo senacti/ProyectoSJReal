@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->integer('id_pedido', true);
-            $table->integer('pedido_id_usuario')->index('fk_pedido_usuarios1');
-            $table->integer('pedido_id_control_inventario')->index('fk_pedido_control_inventarios1');
-            $table->integer('pedido_id_proveedor')->index('fk_proveedor_has_producto_proveedor1');
+            $table->unsignedBigInteger('id_pedido', true);
+            $table->unsignedBigInteger('pedido_id_usuario')->index('fk_pedido_usuarios1');
+            $table->unsignedBigInteger('pedido_id_control_inventario')->index('fk_pedido_control_inventarios1');
+            $table->unsignedBigInteger('pedido_id_proveedor')->index('fk_proveedor_has_producto_proveedor1');
             $table->integer('cantidad_producto');
             $table->dateTime('fecha_entrega');
             $table->decimal('precio_total_pedido', 10, 0);

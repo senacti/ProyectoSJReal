@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('proveedores', function (Blueprint $table) {
-            $table->integer('id_proveedor', true);
+            $table->unsignedBigInteger('id_proveedor', true);
             $table->string('NIT_proveedor', 15);
             $table->string('nombre_proveedor', 45);
             $table->string('telefono_proveedor', 15);
             $table->string('correo_proveedor', 45);
             $table->enum('categoria_proveedor', ['Aseo', 'Textiles', ''])->nullable();
+            $table->date('fecha_inicio_actividades');
             
             $table->timestamps();
             $table->softDeletes();

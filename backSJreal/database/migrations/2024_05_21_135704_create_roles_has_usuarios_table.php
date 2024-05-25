@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('roles_has_usuarios', function (Blueprint $table) {
-            $table->integer('id')->primary();
-            $table->integer('rol_id_rol')->index('fk_roles_has_usuarios_roles1');
-            $table->integer('usuarios_id_usuario')->index('fk_roles_has_usuarios_usuarios1');
+            $table->unsignedBigInteger('id',true);
+            $table->unsignedBigInteger('rol_id_rol')->index('fk_roles_has_usuarios_roles1');
+            $table->unsignedBigInteger('usuarios_id_usuario')->index('fk_roles_has_usuarios_usuarios1');
             
             $table->timestamps();
             $table->softDeletes();
@@ -29,3 +29,6 @@ return new class extends Migration
         Schema::dropIfExists('roles_has_usuarios');
     }
 };
+// roles_has_usuarios
+// usuario_id_usuario
+// rol_id_rol

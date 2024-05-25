@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('detalles_pago', function (Blueprint $table) {
-            $table->integer('id_detalle_pago', true);
-            $table->integer('detalle_pago_id_pago')->index('fk_detalles_pago_pagos1');
-            $table->integer('detalle_pago_id_producto')->index('fk_detalles_pago_productos1');
+            $table->unsignedBigInteger('id_detalle_pago', true);
+            $table->unsignedBigInteger('detalle_pago_id_pago')->index('fk_detalles_pago_pagos1');
+            $table->unsignedBigInteger('detalle_pago_id_producto')->index('fk_detalles_pago_productos1');
             $table->double('precio_por_item', null, 0);
             $table->integer('cantidad_item');
             $table->double('detalle_pago_precio_total', null, 0);

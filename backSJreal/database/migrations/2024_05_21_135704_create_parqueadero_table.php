@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('parqueadero', function (Blueprint $table) {
-            $table->integer('id_parqueadero')->primary();
-            $table->integer('vehiculo_id_vehiculo')->index('fk_vehiculos_has_hospedajes_vehiculos1');
-            $table->integer('hospedaje_id_hospedaje')->index('fk_vehiculos_has_hospedajes_hospedajes1');
-            
+            $table->unsignedBigInteger('id_parqueadero')->primary();
+            $table->unsignedBigInteger('vehiculo_id_vehiculo')->index('fk_vehiculos_has_hospedajes_vehiculos1');
+            $table->unsignedBigInteger('hospedaje_id_hospedaje')->index('fk_vehiculos_has_hospedajes_hospedajes1');
+            $table->tinyInteger('status');
+            $table->string('code', 5);
+
             $table->timestamps();
             $table->softDeletes();
         });

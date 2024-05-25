@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Bases\BaseController;
 use App\Http\Controllers\Controller;
+use App\Http\Models\Usuario;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
 
-class UsuarioController extends Controller
+class UsuarioController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-      
+        
     }
 
     /**
@@ -28,15 +33,40 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            DB::beginTransaction();
+
+            $arrayRequest = $request->all();
+            unset($arrayRequest['rol']);
+            $usuario = Usuario::updateOrCreate($arrayRequest,$arrayRequest);
+            
+            if (!$usuario->roles()->where('id', $request->rol)->exists()) {
+                $usuario->roles()->attach($request->rol);
+            }
+
+            DB::commit();
+            return $this->responseSuccess('Se creo el Usuario  Exitosamente', $usuario, Response::HTTP_OK);
+        } catch (Exception $e) {
+            DB::rollBack();
+            return $this->responseError('No se creo el Usuario  Exitosamente', $e, Response::HTTP_NOT_FOUND);
+        }
+
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $usuario = Usuario::with('persona', 'roles')->find($id);
+
+       
+        if (!$usuario) {
+            return response()->json(['message' => 'Usuario no encontrado'], 404);
+        }
+
+        return response()->json($usuario);
     }
 
     /**

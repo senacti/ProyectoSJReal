@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('control_inventarios', function (Blueprint $table) {
-            $table->integer('id_control_inventario', true);
-            $table->integer('control_inventario_id_producto')->index('fk_control_inventarios_productos1');
+            $table->unsignedBigInteger('id_control_inventario', true);
+            $table->unsignedBigInteger('control_inventario_id_producto')->index('fk_control_inventarios_productos1');
             $table->date('fecha_actualizacion');
             $table->enum('tipop_actualizacion', ['Modificar cantidad producto', 'Añadir nuevo Item', 'Eliminar Item']);
             $table->integer('cantidad_añadida');

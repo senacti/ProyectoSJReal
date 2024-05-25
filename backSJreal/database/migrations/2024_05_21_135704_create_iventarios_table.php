@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('iventarios', function (Blueprint $table) {
-            $table->integer('id_inventario', true);
-            $table->integer('inventario_id_control')->index('fk_sucursal_has_inventario_control_inventario1');
-            $table->integer('inventario_id_sucursal')->index('fk_sucursal_has_inventario_sucursales1');
+            $table->unsignedBigInteger('id_inventario', true);
+            $table->unsignedBigInteger('inventario_id_control')->index('fk_sucursal_has_inventario_control_inventario1');
+            $table->unsignedBigInteger('inventario_id_sucursal')->index('fk_sucursal_has_inventario_sucursales1');
             $table->integer('cantidad_inventarios');
             $table->string('nombre_Inventario', 45);
             $table->string('categoria_Inventario', 45);

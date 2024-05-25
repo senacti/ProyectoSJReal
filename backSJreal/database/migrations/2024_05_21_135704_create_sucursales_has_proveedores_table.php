@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sucursales_has_proveedores', function (Blueprint $table) {
-            $table->integer('id_sucursales_has_proveedores', true);
-            $table->integer('sucursal_id_sucursal')->index('fk_sucursal_has_proveedor_sucursal1');
-            $table->integer('proveedor_id_proveedor')->index('fk_sucursales_has_proveedores_proveedores1');
-            $table->date('fecha_inicio_actividades');
-            $table->integer('antiguedad_actividades');
+            $table->unsignedBigInteger('id_sucursales_has_proveedores', true);
+            $table->unsignedBigInteger('sucursal_id_sucursal')->index('fk_sucursal_has_proveedor_sucursal1');
+            $table->unsignedBigInteger('proveedor_id_proveedor')->index('fk_sucursales_has_proveedores_proveedores1');
+            
             
             $table->timestamps();
             $table->softDeletes();

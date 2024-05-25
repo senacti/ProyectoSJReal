@@ -2,12 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Bases\BaseController;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Persona;
+use App\Http\Repositories\PersonaRepository;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
-class PersonaController extends Controller
+class PersonaController extends BaseController
 {
+    /*
+    |------------------------------------------------
+    -
+    | ATTRIBUTES
+    | -----------------------------------------------
+    */
+    private $persona_repository;
+
+
+    /*
+    |------------------------------------------------
+    | CONSTRUCTOR
+    | -----------------------------------------------
+    */
+    public function __construct(
+        PersonaRepository $persona_repository,
+
+    ) {
+        $this->persona_repository = $persona_repository;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -19,7 +45,7 @@ class PersonaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($request )
+    public function create()
     {
         
     }
@@ -29,12 +55,19 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
-        $arrayRequest = $request->all();
+        
+        try {
+            DB::beginTransaction();
 
-        $persona = Persona::create($arrayRequest);
+            $arrayRequest = $request->all();
+            $persona = $this->persona_repository->create($arrayRequest);
 
-        // Retornar una respuesta (puede ser una redirección, JSON, etc.)
-        return response()->json($persona, 201);
+            DB::commit();
+            return $this->responseSuccess('Se creo el Usuario  Exitosamente', $persona, Response::HTTP_OK);
+        } catch (Exception $e) {
+            DB::rollBack();
+            return $this->responseError('No se creo el Usuario  Exitosamente', $e, Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**

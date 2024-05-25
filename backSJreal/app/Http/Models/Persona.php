@@ -2,7 +2,6 @@
 
 namespace App\Http\Models;
 
-use App\Http\Modules\Analysis\AnalysisArimaDetail\Model\AnalysisArimaDetail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

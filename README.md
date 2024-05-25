@@ -36,11 +36,11 @@ Este proyecto es una aplicación web desarrollada con Laravel 10.0 para el backe
 1. Clonar el repositorio:
     ```sh
     git clone git@github.com:senacti/ProyectoSJReal.git 
-    cd backSJReal
     ```
 
 2. Instalar dependencias de Composer:
     ```sh
+    cd backSJReal
     composer install
     ```
 3. Crear un archivo `.env` basado en `.env.example` y configurar la conexión a la base de datos:

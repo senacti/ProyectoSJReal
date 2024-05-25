@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pagos', function (Blueprint $table) {
-            $table->integer('id_pago', true);
-            $table->integer('pago_id_hospedaje')->index('fk_pagos_hospedajes1');
-            $table->integer('pago_id_persona')->index('fk_pago_usuarios1');
+            $table->unsignedBigInteger('id_pago', true);
+            $table->unsignedBigInteger('pago_id_hospedaje')->index('fk_pagos_hospedajes1');
+            $table->unsignedBigInteger('pago_id_persona')->index('fk_pago_usuarios1');
             $table->string('titular_pago', 80);
             $table->enum('medio_pago', ['PSE', 'Tarjeta de crédito', 'Tarjeta de dédito', 'Efectivo']);
             $table->string('concepto_pago', 500);
