@@ -47,12 +47,14 @@ class UsuarioSeeder extends Seeder
         $usuarios = json_decode($json);
         foreach ($usuarios as $usuario) {
             // dd(gettype(($usuario)));
+            
             $usuarioRequets = new Request([
                  'usuario_id_persona' => $usuario->usuario_id_persona,
                  'contrasena_usuario' =>$usuario->contrasena_usuario,
                  'nombre_usuario' => $usuario->nombre_usuario,
                  'rol' => $usuario->rol,
                 ]);
+                
             $this->usuario_controller->store($usuarioRequets);
         }
 

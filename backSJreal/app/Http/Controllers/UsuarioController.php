@@ -33,13 +33,17 @@ class UsuarioController extends BaseController
      */
     public function store(Request $request)
     {
+        
         try {
             DB::beginTransaction();
-
-            $arrayRequest = $request->all();
-            unset($arrayRequest['rol']);
-            $usuario = Usuario::updateOrCreate($arrayRequest,$arrayRequest);
             
+            $arrayRequest = $request->all();
+            
+            unset($arrayRequest['rol']);
+            
+            $usuario = Usuario::updateOrCreate($arrayRequest,$arrayRequest);
+            // $usuario = Usuario::create($arrayRequest);
+            // dd($usuario); 
             if (!$usuario->roles()->where('id', $request->rol)->exists()) {
                 $usuario->roles()->attach($request->rol);
             }
@@ -47,6 +51,7 @@ class UsuarioController extends BaseController
             DB::commit();
             return $this->responseSuccess('Se creo el Usuario  Exitosamente', $usuario, Response::HTTP_OK);
         } catch (Exception $e) {
+            dd($e); 
             DB::rollBack();
             return $this->responseError('No se creo el Usuario  Exitosamente', $e, Response::HTTP_NOT_FOUND);
         }
