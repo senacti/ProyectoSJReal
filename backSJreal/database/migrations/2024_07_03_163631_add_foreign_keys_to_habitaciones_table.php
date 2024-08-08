@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::table('habitaciones', function (Blueprint $table) {
             $table->foreign(['habitacion_id_sucursal'], 'fk_habitaciones_sucursales1')->references(['id_sucursal'])->on('sucursales')->onUpdate('no action')->onDelete('no action');
-            $table->foreign(['temporadas_id_temporada'], 'fk_habitaciones_temporadas1')->references(['id_temporada'])->on('temporadas')->onUpdate('no action')->onDelete('no action');
         });
     }
 

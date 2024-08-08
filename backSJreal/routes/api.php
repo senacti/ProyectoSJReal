@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/personas', [PersonaController::class, 'store']);
 Route::post('/roles', [RolController::class, 'store']);
+Route::post('/register', [PersonaController::class, 'store']);
 // Route::post('/usuarios', [UsuarioController::class, 'store']);
 // Route::get('/usuarios/{id}', [UsuarioController::class, 'show']);
 

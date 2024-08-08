@@ -20,8 +20,6 @@ return new class extends Migration
             $table->integer('capacidad_habitacion');
             $table->double('precio_habitacion', null, 0);
             $table->tinyInteger('status');
-            $table->tinyInteger('pet_freandlly');
-            $table->integer('temporadas_id_temporada')->index('fk_habitaciones_temporadas1');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -55,6 +55,7 @@ class PersonaController extends BaseController
      */
     public function store(Request $request)
     {
+        return $this->responseSuccess('Se creo el Usuario  Exitosamente', "jejeje", Response::HTTP_OK);
         
         try {
             DB::beginTransaction();
