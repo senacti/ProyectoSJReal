@@ -1,38 +1,60 @@
-.hotel-header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-    
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
-  
-    .logo img {
-      height: 50px;
-    }
-  
-    .navigation {
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 20px;
-  
-        li {
-          a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s;
-  
-            &:hover {
-              color: #007BFF;
-            }
-          }
-        }
-      }
-    }
-  }
+.header-module {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-around;
+  padding: 1em;
+  transition: background-color 0.5s linear;
+}
+
+.header-module.scrolled {
+  background-color: hsla(360, 100%, 100%, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.header-module__logo img {
+  max-width: 5em;
+  height: 5em;
+}
+
+.header-module__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-module__logo h1 {
+  text-transform: uppercase;
+}
+
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  padding: 0.5em;
+  margin: 0.5em 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.item__icon {
+  height: 1.5em;
+  width: 1.5em;
+  font-size: 20px;
+}
+
+a:hover {
+  color: #B9AE9D;
+}
+
+.horizontal-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  list-style: none;
+}
