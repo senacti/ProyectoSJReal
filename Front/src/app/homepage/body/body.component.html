@@ -1,80 +1,46 @@
-<section class=" relative main-container ">
-  <!-- Sección Habitaciones -->
-   <!-- <div class=" w-full h-72">  -->
-      <!-- object-cover -->
-      <img  src="assets/images/home2.jpg" alt="Descripción de la imagen"
-      class=" w-full h-[70vh] object-cover rounded-lg shadow-lg">
-    <!-- </div> -->
-  <div class=" habitaciones flex flex-col">
-    
-   
-    <div class="bg-[#CED8E2] shadow-lg border border-gray-300 rounded-lg ">
-      <h3 class="pb-2 text-xl font-semibold">¿Cuántos son y por cuántos días?</h3>
-      <form action="#" method="POST" id="reserva-form">
-        <div class="pb-4">
-          <label for="reserva-cantidad_personas" class="block mb-1">Cantidad de Personas:</label>
-          <input type="number" id="reserva-cantidad_personas" name="reserva-cantidad_personas" min="1" required
-            class="w-full px-3 py-2 border border-gray-300 rounded-md">
-        </div>
-        <div class="pb-4">
-          <label for="reserva-num_noches" class="block mb-1">Número de Noches:</label>
-          <input type="number" id="reserva-num_noches" name="reserva-num_noches" min="1" required
-            class="w-full px-3 py-2 border border-gray-300 rounded-md">
-        </div>
-        <div class="">
-          <label for="reserva-tipo_habitacion" class="block pb-1">Tipo de Habitación:</label>
-          <select id="reserva-tipo_habitacion" name="reserva-tipo_habitacion" required
-            class="w-full px-3 py-2 border border-gray-300 rounded-md">
-            <option value="">Selecciona el tipo de habitación</option>
-            <option value="individual">Individual</option>
-            <option value="doble">Doble</option>
-            <option value="suite">Suite</option>
-          </select>
-        </div>
-        <a class="block w-full bg-[#2E4B5F] text-white text-center py-2 rounded-md cursor-pointer hover:bg-[#0056b3]"
-          href="app/vistashtml/inicio/formularioReserva.html">Consultar</a>
-        <button type="submit" class="hidden"></button>
-      </form>
-    </div>
+<section class="main-container ">
 
-    <div class="habitacion bg-[#f4f4f4] shadow-lg rounded-lg  transition-transform duration-300 hover:scale-105">
-      <a class="block pb-4 w-full h-32 bg-cover bg-center rounded-lg"
-        style="background-image: url('assets/images/habitacion3.jpeg');"></a>
-      <div>
-        <h4 class="text-xl font-semibold pb-2">Habitación sencilla</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolorum enim quos nulla tempora quis vel nam
-          incidunt voluptatum delectus voluptas voluptatem consequuntur assumenda laudantium neque aliquam, dicta rerum.
-          Reprehenderit?</p>
+  <img src="assets/images/home2.jpg" alt="Descripción de la imagen"
+    class=" w-full h-[70vh] object-cover rounded-lg shadow-lg">
+    <section class="map border">
+
+      <div class="map-text">
+        <h1>Esta es nuestra ubicacion</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Possimus voluptates maxime voluptatibus nulla odit deleniti
+          architecto, amet natus? Repudiandae expedita, fugit minus
+          tempora laudantium corporis labore ipsa cumque quos velit?
+        </p>
+  
+        <a class="item">
+          <span class="material-symbols-outlined list-item__icon">
+            location_on
+          </span>
+          <p class="list-item__label">Cr 7a #5A-49, Sibaté.</p>
+        </a>
+        <a class="item">
+          <span class="material-symbols-outlined list-item__icon">
+          call
+          </span>
+          <p class="list-item__label">+57-3147245703</p>
+        </a>
+        <a class="item">
+          <span class="material-symbols-outlined list-item__icon">
+          mail
+          </span>
+          <p class="list-item__label">pedroburgos988&#64;gmail.com</p>
+        </a>
       </div>
-    </div>
-
-    <div class="habitacion bg-[#f4f4f4] shadow-lg rounded-lg  transition-transform duration-300 hover:scale-105">
-      <a class="block pb-4 w-full h-32 bg-cover bg-center rounded-lg"
-        style="background-image: url('assets/images/habitacion3.jpeg');"></a>
-      <div>
-        <h4 class="text-xl font-semibold pb-2">Habitación doble</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolorum enim quos nulla tempora quis vel nam
-          incidunt voluptatum delectus voluptas voluptatem consequuntur assumenda laudantium neque aliquam, dicta rerum.
-          Reprehenderit?</p>
+  
+      <div class="map-content ">
+        <iframe class="border"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3977.5871233282396!2d-74.26304612502203!3d4.487521695486818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMjknMTUuMSJOIDc0wrAxNSczNy43Ilc!5e0!3m2!1ses!2sco!4v1708658396182!5m2!1ses!2sco"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
-    </div>
-  </div>
+  
+    </section>
 
-  <!-- Sección Mapa -->
-  <!-- <div class="map grid grid-cols-1 md:grid-cols-2 ga bg-[#CED8E2] rounded-lg shadow-lg p-8">
-    <div class="title-map flex flex-col ">
-      <h1 class="text-2xl font-black uppercase mb-2">Estamos ubicados aquí</h1>
-      <h2 class="text-xl mb-2">Cr 7a #5A-49, Sibaté, Cundinamarca.</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptates maxime voluptatibus nulla odit
-        deleniti architecto, amet natus? Repudiandae expedita, fugit minus tempora laudantium corporis labore ipsa
-        cumque quos velit?</p>
-    </div>
-    <div
-      class="map-content relative p-2 border border-gray-200 rounded-lg shadow-md transition-transform duration-500 hover:scale-105">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3977.5871233282396!2d-74.26304612502203!3d4.487521695486818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwMjknMTUuMSJOIDc0wrAxNSczNy43Ilc!5e0!3m2!1ses!2sco!4v1708658396182!5m2!1ses!2sco"
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div> -->
+
 </section>

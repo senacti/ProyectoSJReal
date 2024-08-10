@@ -7,7 +7,7 @@
   transition: background-color 0.5s linear;
 }
 
-.header-module.scrolled {
+.header-module:hover {
   background-color: hsla(360, 100%, 100%, 1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -1,172 +1,53 @@
-// /*------------------ Habitaciones -----------------------*/
- 
-// .habitaciones {
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   width: 100%;
-//   margin: 1.5em 0.5em;
-//   padding: 1em 2em;
-//   gap: 1.5em;
-// }
+.map {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 1em 1em;
+    display: flex;
+    gap: 2em;
+    background-color: #f5f1ea;
+}
 
-// // .clearfix::before,
-// // .clearfix::after {
-// // display: table;
-// // content: " ";
-// // }
+.map-text {
+    flex: 1;
+}
 
-// // .clearfix::after {
-// //   display: block;
-// //   content: "";
-// //   clear: both;
-// // }
+.map-text > h1 {
+    text-transform: uppercase;
+    margin: 2em 1em 3em 1em;
+    padding: 0.5em;
+}
 
-// // .habitacion {
-// //   float: left;
-// //   padding: 1em;
-// //   background-color: #f4f4f4;
-// //   box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-// //   transition: transform 0.3s ease;
-// //   border-radius: 10px;
-// //   clear: left;
-// // }
+.map-text > p {
+    margin: 1em 0 0 1em ;
+    padding: 0.5em;
+}
 
-// .media-image {
-//   width: 50%;
-//   height: 100%;
-//   float: left;
-//   background-image: url("../../../../assets/images/habitacion4.jpeg");
-//   // background-size: ;
-//   object-fit: cover;
-//   border: 2px solid #ccc;
-//   border-radius: 10px;
-//   margin-right: 1em;
-// }
+.map-content {
+    flex: 2;
+}
 
-// // .media-body {
-// //   overflow: auto;
-// //   text-align: center;
-// // }
-
-// // .media-body h4 {
-// //   text-align: center;
-// //   padding-bottom: .5em;
-// // }
-
-// // .habitaciones .habitacion-content .habitacion button:hover img {
-// //   cursor: pointer;
-// // }
-
-// // .habitaciones .habitacion-content .habitacion:hover {
-// //   transform: scale(1.1);
-// //   cursor: pointer;
-// // }
-
-// // /*----------Reservas----------*/
-
-// // .reserva-container {
-// //   background-color: #CED8E2;
-// //   box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-// //   border-radius: 10px !important;
-// //   padding: 1em;
-// //   border: 1px solid #ccc;
-// //   border-radius: 5px;
-// // }
-
-// // .reserva-container h3 {
-// //   margin: .5em .1em;
-// // }
-
-// // .reserva-form-group {
-// //   margin-bottom: 1.3em;
-// // }
-
-// // .reserva-form-group label {
-// //   display: block;
-// //   margin-bottom: 5px;
-// // }
-
-// // .reserva-form-group input[type="number"],
-// // .reserva-form-group select {
-// //   width: 100%;
-// //   padding: 10px;
-// //   border: 1px solid #ccc;
-// //   border-radius: 5px;
-// // }
-
-// // .reserva-submit {
-// //   display: block;
-// //   width: 100%;
-// //   padding: 0.8em;
-// //   background-color: #2E4B5F;
-// //   color: #fff;
-// //   border-radius: 5px;
-// //   cursor: pointer;
-// // }
-
-// // .reserva-submit:hover {
-// //   background-color: #0056b3;
-// // }
-
-// // .reserva-submit button {
-// //   display: none;
-// // }
+iframe {
+    width: 100%;
+    height: 40vh;
+}
 
 
-// /*----------Mapa----------*/ 
+//
 
-// .map {
-//     display: grid;
-//     grid-template-columns: repeat(2, 1fr);
-//     background-color: #CED8E2;
-//     border-radius: 10px;
-//     box-shadow: 10px 10px 4px rgba(101, 116, 112, 0.2);
-//     transition: box-shadow 0.5s ease;
-//     padding: 2em;
-//     margin: 1.5em 2em;
-//     font-family: 'Archivo Black';
-//   }
-  
-//   .title-map {
-//     display: flex;
-//     flex-direction: column;
-//     padding: 1em;
-//   }
-  
-//   .title-map > h1 {
-//     flex-basis: 25%;
-//     font-size: 2em;
-//     text-transform: uppercase;
-//   }
-  
-//   .title-map > h2 {
-//     flex-basis: 25%;
-//   }
-  
-//   .title-map {
-//     flex-basis: 50%;
-//   }
-  
-//   .map-content {
-//     position: relative;
-//     padding: .5em;
-//     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
-//     border: 1px solid rgba(0, 0, 0, 0.2);
-//     border-radius: 5px;
-//     transition: box-shadow 0.3s ease; 
-//     transition: transform 0.5s ease;
-//   }
-//   .map-content:hover{
-//     transform: scale(1.05);
-//     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); 
-//     z-index: 20;
-//   }
-//   .map-detail {
-//     width: 100%;
-//     height: 400px;
-//   }
-  
-//   .map:hover {
-//     background-color: #bccfe2;
-//     box-shadow: 0px 0px 20px rgba(101, 113, 116, 0.6);
-//   }
+.item {
+    display: flex;
+    padding: 0.5em;
+    margin: 0.5em 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.item__icon {
+    height: 1.5em;
+    width: 1.5em;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #B9AE9D;
+}
