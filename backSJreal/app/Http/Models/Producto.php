@@ -13,26 +13,18 @@ class Producto extends Model
 
     protected $fillable = [
         'id_producto',
+        'producto_id_categoria',
         'precio_producto',
-        'descripcion_producto',
         'nombre_producto',
-        'estado_producto',
-        'existencias_producto',
-        'maximo_producto',
-        'minimo_producto',
-        'tipo_producto',
+        'estado_producto'
     ];
 
     protected $index_columns = [
         'id_producto',
+        'producto_id_categoria',
         'precio_producto',
-        'descripcion_producto',
         'nombre_producto',
-        'estado_producto',
-        'existencias_producto',
-        'maximo_producto',
-        'minimo_producto',
-        'tipo_producto',
+        'estado_producto'
 
     ];
 

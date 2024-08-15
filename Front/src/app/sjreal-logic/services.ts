@@ -19,8 +19,36 @@ export class Services {
 
     /**
      * 
-     * USERS
+     * CATEGORIAS
+     */
+
+    getCategoria() {
+        return this.http.get(`${URL}/categoria`);
+    }
+
+    postCategoria(data: any){
+        console.log(data);
+        return this.http.post(`${URL}/categoria`, data);
+    }
+
+    /**
      * 
+     * PRODCUTOS
+     */
+
+    getProductos() {
+        return this.http.get(`${URL}/productos`);
+    }
+
+    postProducto(data: any){
+        console.log(data);
+        return this.http.post(`${URL}/productos`, data);
+    }
+
+    /**
+     * 
+     * USERS
+     *  
      */
 
     get() {

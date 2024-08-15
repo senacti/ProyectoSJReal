@@ -62,16 +62,16 @@ class BaseRepository
      * Returns all the related instances in model table
      * @return mixed with all instances
      */
-    public function index(Request $request)
-    {
-        $query = $this->model->select(get_class($this->model)::$index_columns);
+    // public function index(Request $request)
+    // {
+    //     $query = $this->model->select(get_class($this->model)::$index_columns);
 
-        if ( isset($request->per_page) ){
-            return $query->paginate($request->per_page);
-        }
+    //     if ( isset($request->per_page) ){
+    //         return $query->paginate($request->per_page);
+    //     }
 
-        return $query->get();
-    }
+    //     return $query->get();
+    // }
 
     /**
      * Returns all the related instances in model table

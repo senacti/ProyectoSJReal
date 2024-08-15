@@ -1,0 +1,14 @@
+<!-- template del componente principal -->
+<section class="flex flex-col h-screen">
+    <app-topbar class="w-full"></app-topbar> <!-- Barra superior -->
+    <div class=" w-full flex flex-row">
+      <app-sidebar  (estadoCategoria)="manejarCategoria($event)" 
+                    (estadoProducto)="manejarProducto($event)"  
+                    class="w-[20%]"></app-sidebar> <!-- Barra lateral a la izquierda -->
+      <app-content  [categoria]="mensajeCategoria" 
+                    [producto]="mensajeProducto" 
+                    class="w-[80%]"></app-content> <!-- Contenido principal -->
+    </div>
+  </section>
+  <!-- categoria
+  producto -->

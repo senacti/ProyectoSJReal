@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Http\Bases\BaseController;
-use App\Http\Repositories\ProductoRepository;
+use App\Http\Repositories\CategoriaRepository;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
-class ProductoController extends BaseController
+class CategoriaController extends BaseController
 {
 
-    private $producto_repository;
+    private $categoria_repository;
 
-    public function __construct(ProductoRepository $producto_repository,
+    public function __construct(CategoriaRepository $categoria_repository,
     ) {
 
-        $this->producto_repository =  $producto_repository;
+        $this->categoria_repository =  $categoria_repository;
     }
-
     /**
      * Display a listing of the resource.
      */
@@ -28,13 +28,13 @@ class ProductoController extends BaseController
         try {
             DB::beginTransaction();
 
-            $producto = $this->producto_repository->index();
+            $categoria = $this->categoria_repository->index();
 
             DB::commit();
-            return $this->responseSuccess('productos obtenidas Exitosamente', $producto, Response::HTTP_OK);
+            return $this->responseSuccess('Categorias obtenidas Exitosamente', $categoria, Response::HTTP_OK);
         } catch (Exception $e) {
             DB::rollBack();
-            return $this->responseError('productos no se obtuvieron Exitosamente', $e, Response::HTTP_NOT_FOUND);
+            return $this->responseError('Categorias  no se obtuvieron Exitosamente', $e, Response::HTTP_NOT_FOUND);
         }
     }
 
@@ -56,12 +56,12 @@ class ProductoController extends BaseController
 
             $arrayRequest = $request->all();
             
-            $categoria = $this->producto_repository->create($arrayRequest);
+            $categoria = $this->categoria_repository->create($arrayRequest);
             DB::commit();
-            return $this->responseSuccess('Se creo el producto  Exitosamente', $categoria, Response::HTTP_OK);
+            return $this->responseSuccess('Se creo la categoria  Exitosamente', $categoria, Response::HTTP_OK);
         } catch (Exception $e) {
             DB::rollBack();
-            return $this->responseError('No se creo el producto  Exitosamente', $e, Response::HTTP_NOT_FOUND);
+            return $this->responseError('No se creo la categoria  Exitosamente', $e, Response::HTTP_NOT_FOUND);
         }
     }
 

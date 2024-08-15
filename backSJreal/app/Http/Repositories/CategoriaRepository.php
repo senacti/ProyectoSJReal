@@ -3,7 +3,7 @@
 namespace App\Http\Repositories;
 
 use App\Http\Bases\BaseRepository;
-use App\Http\Models\Producto;
+use App\Http\Models\Categoria;
 use Illuminate\Http\Request;
 
 
@@ -11,10 +11,10 @@ use Illuminate\Http\Request;
 /**
  *
  */
-class ProductoRepository extends BaseRepository
+class CategoriaRepository extends BaseRepository
 {
 
-    public function __construct(Producto $model,
+    public function __construct(Categoria $model,
                                 )
     {
         parent::__construct($model);
@@ -24,10 +24,10 @@ class ProductoRepository extends BaseRepository
 
     public function index()
     {
-        $query = $this->model->select('id_producto','producto_id_categoria','precio_producto','estado_producto','nombre_producto' );
+        $query = $this->model->select('id','code','nombre_categoria');
+
 
         return $query->get();
     }
-
 
 }
