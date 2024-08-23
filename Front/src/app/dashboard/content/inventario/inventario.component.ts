@@ -1,43 +1,46 @@
 import { Component } from '@angular/core';
-import { Services } from '../../../sjreal-logic/services';
 import { Subscription } from 'rxjs';
+import { Services } from '../../../sjreal-logic/services';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-producto',
+  selector: 'app-inventario',
   standalone: true,
-  imports: [CommonModule,FormsModule],
-  templateUrl: './producto.component.html',
-  styleUrl: './producto.component.scss'
+  imports: [CommonModule, FormsModule],
+  templateUrl: './inventario.component.html',
+  styleUrl: './inventario.component.scss'
 })
-export class ProductoComponent {
+export class InventarioComponent {
 
   private unsubscribe: Subscription[] = [];
   constructor(private _services: Services) {}
 
-  sinProductos: boolean = false;
-  productos : any = [];
+  sinInventarios: boolean = false;
+  inventarios : any = [];
   
-  producto = {
-    producto_id_categoria: 0,
-    precio_producto: '',
-    nombre_producto: '',
-    estado_producto: '',
+  inventario = {
+    inventario_id_producto: '',
+    cantidad_inventario: '',
+    nombre_inventario: '',
+    categoria_inventario: '',
+    fecha_inventario: '',
+    estado_inventario: '',
+    cantidad_minima_inventario: '',
   };
   categorias : any = [];
 
   ngOnInit(): void {
     
-    const sub1 = this._services.getProductos().subscribe({
+    const sub1 = this._services.getInventarios().subscribe({
       next:(res:any) => {
          console.log(res.data);
          if(res.data.length === 0){
-          this.sinProductos  =  true;
+          this.sinInventarios  =  true;
           
          }else{
           console.log(res.data)
-          this.productos =res.data
+          this.inventarios =res.data
          }
       },
       error: (e:any) => console.log(e)
@@ -46,17 +49,16 @@ export class ProductoComponent {
   }
 
   crearOculto: boolean = true;
-  crearProducto(){
+  crearInventario(){
     this.crearOculto = !this.crearOculto;
     
-    const sub1 = this._services.getCategoria().subscribe({
+    const sub1 = this._services.getInventarios().subscribe({
       next:(res:any) => {
          console.log(res.data);
          if(res.data.length === 0){
-          console.log("mencionar que no hay caterogiras nno deberia poder crear productos");
+          console.log("mencionar que no hay caterogiras nno deberia poder crear Inventarios");
          }else{
-          this.categorias =res.data;
-          
+          this.categorias =res.data
          }
       },
       error: (e:any) => console.log(e)
@@ -67,7 +69,7 @@ export class ProductoComponent {
 
 
 
-  eliminarCategoria(id: number) {
+  eliminarReserva(id: number) {
     // Lógica para eliminar la categoría
     console.log("wtff");
   }
@@ -75,25 +77,27 @@ export class ProductoComponent {
 
 
 
-  enviarFormularioProducto(){
+  enviarFormularioInventario(){
     // Aquí podrías hacer una solicitud HTTP para guardar la categoría
 
-    console.log(this.producto);
-    const sub2 = this._services.postProducto(this.producto).subscribe({
+    console.log(this.inventarios);
+    const sub2 = this._services.postReserva(this.inventarios).subscribe({
       next:(res:any) => {
          console.log(res);
-         this.ngOnInit();
       },
       error: (e:any) => console.log(e)
     });
     this.unsubscribe.push(sub2);
 
     // Limpia los datos del formulario después de crear la categoría
-    this.producto = {
-      producto_id_categoria: 0,
-      precio_producto: '',
-      nombre_producto: '',
-      estado_producto: '',
+    this.inventario = {
+      inventario_id_producto: '',
+      cantidad_inventario: '',
+      nombre_inventario: '',
+      categoria_inventario: '',
+      fecha_inventario: '',
+      estado_inventario: '',
+      cantidad_minima_inventario: '',
     };
 
     // Cierra el modal

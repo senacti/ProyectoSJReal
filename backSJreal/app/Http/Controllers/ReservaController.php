@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Bases\BaseController;
-use App\Http\Repositories\HabitacionRepository;
+use App\Http\Repositories\ReservaRepository;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
-class HabitacionController extends BaseController
+class ReservaController extends BaseController
 {
-    private $habitacion_repository;
+    private $reserva_repository;
 
-    public function __construct(HabitacionRepository $habitacion_repository,
+    public function __construct(ReservaRepository $reserva_repository,
     ) {
 
-        $this->habitacion_repository =  $habitacion_repository;
+        $this->reserva_repository =  $reserva_repository;
     }
 
     /**
@@ -27,13 +27,13 @@ class HabitacionController extends BaseController
         try {
             DB::beginTransaction();
 
-            $habitacion = $this->habitacion_repository->index();
+            $producto = $this->reserva_repository->index();
 
             DB::commit();
-            return $this->responseSuccess('habitacions obtenidas Exitosamente', $habitacion, Response::HTTP_OK);
+            return $this->responseSuccess('productos obtenidas Exitosamente', $producto, Response::HTTP_OK);
         } catch (Exception $e) {
             DB::rollBack();
-            return $this->responseError('habitacions  no se obtuvieron Exitosamente', $e, Response::HTTP_NOT_FOUND);
+            return $this->responseError('productos no se obtuvieron Exitosamente', $e, Response::HTTP_NOT_FOUND);
         }
     }
 
@@ -55,12 +55,12 @@ class HabitacionController extends BaseController
 
             $arrayRequest = $request->all();
             
-            $habitacion = $this->habitacion_repository->create($arrayRequest);
+            $reserva = $this->reserva_repository->create($arrayRequest);
             DB::commit();
-            return $this->responseSuccess('Se creo la habitacion  Exitosamente', $habitacion, Response::HTTP_OK);
+            return $this->responseSuccess('Se creo la reserva  Exitosamente', $reserva, Response::HTTP_OK);
         } catch (Exception $e) {
             DB::rollBack();
-            return $this->responseError('No se creo la habitacion  Exitosamente', $e, Response::HTTP_NOT_FOUND);
+            return $this->responseError('No se creo la reserva  Exitosamente', $e, Response::HTTP_NOT_FOUND);
         }
     }
 

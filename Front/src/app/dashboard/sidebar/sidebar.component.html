@@ -4,31 +4,31 @@
             <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-8"
                 href="inicio.html">
                 <img src="../../../assets/images/dashboard/icons8-inicio.png"
-                    class="w-[50px] h-[50px] ml-2">
+                    class="w-[50px] h-[50px] pl-2">
                 <span class="">Inicio</span>
             </a>
         </li>
         <li>
-            <div (click)="toggleLista()" class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5">
+            <div (click)="activarLista()" class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5">
                 <img src="../../../assets/images/dashboard/icons8-reservas.png"
-                    class="w-[40px] h-[40px] ml-2">
+                    class="w-[40px] h-[40px] pl-2">
                 <span >Recursos</span>
                 <span ><-</span>
             </div>
 
             <div *ngIf="mostrarLista" class="overflow-hidden transition-all duration-300">
-                <button (click)="toggleCategoria()" class="block w-full text-left px-4 py-2 hover:bg-gray-600 border-t border-gray-600">Categoría</button>
-                <button (click)="toggleProducto()" class="block w-full text-left px-4 py-2 hover:bg-gray-600 border-t border-gray-600">Producto</button>
-                <button class="block w-full text-left px-4 py-2 hover:bg-gray-600 border-t border-gray-600">Habitaciones</button>
+                <button (click)="activarCategoria()" class="block w-full text-left px-4 py-2 hover:bg-gray-600 border-t border-gray-600">Categoría</button>
+                <button (click)="activarProducto()" class="block w-full text-left px-4 py-2 hover:bg-gray-600 border-t border-gray-600">Producto</button>
+                <button (click)="activarHabitacion()" class="block w-full text-left px-4 py-2 hover:bg-gray-600 border-t border-gray-600">Habitaciones</button>
             </div>
         </li>
         <li>
-            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
-                href="check_in_out.html">
+            <div (click)="activarReserva()"  class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+                href="check_in_out.html" >
                 <img src="../../../assets/images/dashboard/icons8-reservas.png"
                     class="w-[40px] h-[40px] ml-2">
-                <span class="">Check-in/out</span>
-            </a>
+                <span class="">Reservas</span>
+            </div>
         </li>
         <li>
             <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
@@ -39,12 +39,12 @@
             </a>
         </li>
         <li>
-            <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
+            <div  (click)="activarInventario()" class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"
                 href="inventario.html">
                 <img src="../../../assets/images/dashboard/icons8-inventario.png"
                     class="w-[40px] h-[40px] ml-2">
                 <span class="">Inventario</span>
-            </a>
+            </div>
         </li>
         <li>
             <a class="hover:bg-gray-500 hover:text-xl cursor-pointer border-b border-black flex space-x-4 items-center py-5"

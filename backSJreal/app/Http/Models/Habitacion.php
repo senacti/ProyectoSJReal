@@ -13,22 +13,24 @@ class Habitacion extends Model
 
     protected $fillable = [
         'id_habitacion',
-        'habitacion_id_sucursal',
+        'habitacion_tipo',
         'numero_habitacion',
         'descripcion_habitacion',
-        'tipo_habitacion',
         'capacidad_habitacion',
-        'precio_habitacion'
+        'precio_habitacion',
+        'status_habitacion',
+        'estado_aseo',
     ];
 
     protected $index_columns = [
         'id_habitacion',
-        'habitacion_id_sucursal',
+        'habitacion_tipo',
         'numero_habitacion',
         'descripcion_habitacion',
-        'tipo_habitacion',
         'capacidad_habitacion',
-        'precio_habitacion'
+        'precio_habitacion',
+        'status_habitacion',
+        'estado_aseo',
 
     ];
 
@@ -38,6 +40,9 @@ class Habitacion extends Model
 
     public static $rules_update = [
     ];
+
+
+
 
 
 }

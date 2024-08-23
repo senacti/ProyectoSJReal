@@ -1,15 +1,14 @@
-<p>reservas works!</p>
-<div class="w-full flex-col  bg-stone-200 p-4 rounded-lg  drop-shadow-2xl">
+<div class="w-full bg-stone-200 p-4 rounded-lg drop-shadow-2xl">
     <!-- Contenido principal -->
-
-    <div class="w-full  bg-stone-200 p-4 m-auto">
-
+    <div class="w-full bg-stone-200 p-4 m-auto">
         <div class="flex flex-row items-center py-4 border-b border-gray-400 space-x-4 ml-2">
-            <img src="../../../assets/images/dashboard/icons8-informes.png" class=" w-[40px] h-[40px] ml-2">
-            <h1 class="text-3xl  ">Recursos</h1>
+            <img src="../../../assets/images/dashboard/icons8-informes.png" class="w-[40px] h-[40px] ml-2">
+            <h1 class="text-3xl">Reservas</h1>
         </div>
-        <div class="flex justify-between mb-4 my-4">
-            <button class="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600">Crear</button>
+        <div class="flex justify-between mb-4 my-4"> 
+            <!-- formularioHuespedes -->
+            <button (click)="formularioHuespedes()"
+                class="bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600">Crear</button>
             <input class="border border-gray-300 px-4 py-2 ml-5 rounded w-full" type="text" placeholder="Buscar...">
             <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Buscar</button>
         </div>
@@ -17,180 +16,276 @@
             <table class="border-collapse border border-gray-400 w-full">
                 <thead>
                     <tr class="bg-gray-50">
-                        <th class="border border-gray-400 px-4 py-2">#</th>
-                        <th class="border border-gray-400 px-4 py-2">Nombre</th>
-                        <th class="border border-gray-400 px-4 py-2">Cargo</th>   
-                        <th class="border border-gray-400 px-4 py-2">Horas</th>
-                        <th class="border border-gray-400 px-4 py-2">Sueldo</th>
-                        <th class="border border-gray-400 px-4 py-2">Dirección</th>
-                        <th class="border border-gray-400 px-4 py-2 ">Acciones</th>
+                        <th class="border border-gray-400 px-4 py-2">Código Reserva</th>
+                        <th class="border border-gray-400 px-4 py-2">Check-in</th>
+                        <th class="border border-gray-400 px-4 py-2">Check-out</th>
+                        <th class="border border-gray-400 px-4 py-2">Cantidad de Habitaciones</th>
+                        <th class="border border-gray-400 px-4 py-2">Precio por Habitación</th>
+                        <th class="border border-gray-400 px-4 py-2">Precio Total</th>
+                        <th class="border border-gray-400 px-4 py-2">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Filas de datos -->
-                    <tr class="bg-gray-100">
-                        <td class="border border-gray-400 px-4 py-2">1</td>
-                        <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                        <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                        <td class="border border-gray-400 px-4 py-2">40</td>
-                        <td class="border border-gray-400 px-4 py-2">$1000</td>
-                        <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                        <td class="border border-gray-400 px-4 py-2 ">
-                            <div class="flex flex-row  justify-evenly ">
-                                <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/bookmark.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
+                    <tr *ngFor="let reserva of reservas" class="bg-gray-100">
+                        <td class="border border-gray-400 px-4 py-2">{{ reserva.codigo_reserva }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ reserva.checkin_reserva | date }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ reserva.checkout_reserva | date }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ reserva.cantidad_habitaciones_reservas }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ reserva.precio_por_habitacion_reserva | currency
+                            }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ reserva.precio_total_reserva | currency }}</td>
+                        <td class="border border-gray-400 px-4 py-2">
+                            <div class="flex flex-row justify-evenly">
+                                <button class="bg-blue-400 rounded-xl p-1">
+                                    <img src="../../../assets/images/bookmark.png" alt="Detalle"
+                                        class="w-[36px] h-[36px]">
                                 </button>
-
-                                <button id="openModalEditar" class="bg-green-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/edit.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
+                                <button class="bg-green-400 rounded-xl p-1">
+                                    <img src="../../../assets/images/edit.png" alt="Editar" class="w-[36px] h-[36px]">
                                 </button>
-
-                                <button id="openModalEliminar" class="bg-red-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/eliminar.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
+                                <button class="bg-red-400 rounded-xl p-1">
+                                    <img src="../../../assets/images/eliminar.png" alt="Eliminar"
+                                        class="w-[36px] h-[36px]">
                                 </button>
                             </div>
                         </td>
                     </tr>
-                    <tr class="bg-gray-200">
-                        <td class="border border-gray-400 px-4 py-2">1</td>
-                        <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                        <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                        <td class="border border-gray-400 px-4 py-2">40</td>
-                        <td class="border border-gray-400 px-4 py-2">$1000</td>
-                        <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                        <td class="border border-gray-400 px-4 py-2 ">
-                            <div class="flex flex-row  justify-evenly ">
-                                <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/bookmark.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEditar" class="bg-green-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/edit.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEliminar" class="bg-red-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/eliminar.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-100">
-                        <td class="border border-gray-400 px-4 py-2">1</td>
-                        <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                        <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                        <td class="border border-gray-400 px-4 py-2">40</td>
-                        <td class="border border-gray-400 px-4 py-2">$1000</td>
-                        <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                        <td class="border border-gray-400 px-4 py-2 ">
-                            <div class="flex flex-row  justify-evenly ">
-                                <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/bookmark.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEditar" class="bg-green-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/edit.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEliminar" class="bg-red-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/eliminar.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-200">
-                        <td class="border border-gray-400 px-4 py-2">1</td>
-                        <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                        <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                        <td class="border border-gray-400 px-4 py-2">40</td>
-                        <td class="border border-gray-400 px-4 py-2">$1000</td>
-                        <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                        <td class="border border-gray-400 px-4 py-2 ">
-                            <div class="flex flex-row  justify-evenly ">
-                                <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/bookmark.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEditar" class="bg-green-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/edit.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEliminar" class="bg-red-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/eliminar.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-100">
-                        <td class="border border-gray-400 px-4 py-2">1</td>
-                        <td class="border border-gray-400 px-4 py-2">Nombre 1</td>
-                        <td class="border border-gray-400 px-4 py-2">Cargo 1</td>
-                        <td class="border border-gray-400 px-4 py-2">40</td>
-                        <td class="border border-gray-400 px-4 py-2">$1000</td>
-                        <td class="border border-gray-400 px-4 py-2">Dirección 1</td>
-                        <td class="border border-gray-400 px-4 py-2 ">
-                            <div class="flex flex-row  justify-evenly ">
-                                <button id="openModalDetalle" class="bg-blue-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/bookmark.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEditar" class="bg-green-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/edit.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-
-                                <button id="openModalEliminar" class="bg-red-400 rounded-xl p-1">
-                                    <img src="../../../assets/images/eliminar.png" alt="imagen apra eliminar registro"
-                                        class=" w-[36px] h-[36px]">
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Repite las filas de datos para las 6 filas restantes -->
                 </tbody>
             </table>
         </div>
         <!-- Paginación -->
-        <!-- <hr class="bg-black h-[2px] mt-4 mb-2"> -->
-        <!-- <div class=" flex flex-row-reverse ">
-            <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded p-1 mx-2 mr-4">
-                >>
-            </button>
+        <hr class="bg-black h-[2px] mt-4 mb-2">
+        <div class="flex flex-row-reverse">
+            <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl rounded p-1 mx-2 mr-4">
+                >></button>
             <button
-                class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded border border-black px-3 ">
-                3
-            </button>
+                class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl rounded border border-black px-3">3</button>
             <button
-                class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded border border-black px-3 ">
-                2
-            </button>
+                class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl rounded border border-black px-3">2</button>
             <button
-                class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded border border-black px-3 ">
-                1
-            </button>
-
-            <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded p-1 mx-2">
-                << </button> -->
-
-                    <!-- <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl  rounded p-1 mx-2">
-              pag
-            </button> -->
-        <!-- </div> -->
+                class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl rounded border border-black px-3">1</button>
+            <button class="bg-stone-400 hover:bg-stone-500 text-black hover:text-white text-xl rounded p-1 mx-2">
+                << </button>
+        </div>
         <hr class="bg-black h-[2px] mt-1 mb-2">
-
     </div>
 
+    <!-- Modal Detalle oculto por defecto -->
+    <div *ngIf="!crearOculto" id="modal" class="fixed inset-0 flex items-center justify-center w-[90%] z-50">
+        <!-- Fondo semitransparente -->
+        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+        <!-- Contenedor del modal -->
+        <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+            <!-- Contenido del modal -->
+            <div class="modal-content py-4 text-left px-6 flex flex-col">
+                <!-- Título del modal -->
+                <div class="modal-header flex flex-row items-center">
+                    <h3 class="text-lg font-semibold">Crear Nueva Reserva</h3>
+                    <button (click)="cerrarModal()" id="closeModal"
+                        class="modal-close my-3 ml-auto top-0 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">X</button>
+                </div>
+
+                <!-- Cuerpo del modal: Formulario -->
+                <div class="modal-body">
+                    <form (ngSubmit)="enviarFormularioReserva()" class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="codigo_reserva" class="block text-gray-700">Código Reserva</label>
+                            <input id="codigo_reserva" type="text" [(ngModel)]="reserva.codigo_reserva"
+                                name="codigo_reserva" required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="checkin_reserva" class="block text-gray-700">Check-in</label>
+                            <input id="checkin_reserva" type="date" [(ngModel)]="reserva.checkin_reserva"
+                                name="checkin_reserva" required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="checkout_reserva" class="block text-gray-700">Check-out</label>
+                            <input id="checkout_reserva" type="date" [(ngModel)]="reserva.checkout_reserva"
+                                name="checkout_reserva" required
+                                class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="cantidad_habitaciones_reservas" class="block text-gray-700">Cantidad de
+                                Habitaciones</label>
+                            <input id="cantidad_habitaciones_reservas" type="number"
+                                [(ngModel)]="reserva.cantidad_habitaciones_reservas"
+                                name="cantidad_habitaciones_reservas" required
+                                class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="precio_por_habitacion_reserva" class="block text-gray-700">Precio por
+                                Habitación</label>
+                            <input id="precio_por_habitacion_reserva" type="number"
+                                [(ngModel)]="reserva.precio_por_habitacion_reserva" name="precio_por_habitacion_reserva"
+                                required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="precio_total_reserva" class="block text-gray-700">Precio Total</label>
+                            <input id="precio_total_reserva" type="number" [(ngModel)]="reserva.precio_total_reserva"
+                                name="precio_total_reserva" required
+                                class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="habitaciones" class="block text-gray-700">Habitaciones</label>
+                            <select id="habitaciones" [(ngModel)]="reserva.habitaciones_seleccionadas"
+                                name="habitaciones" multiple class="border border-gray-300 px-4 py-2 rounded w-full">
+                                <option *ngFor="let habitacion of habitaciones" [value]="habitacion.id_habitacion">
+                                    {{ habitacion.numero_habitacion }}
+                                </option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Footer del modal -->
+                <div class="modal-footer flex justify-end">
+                    <button (click)="cerrarModal()"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 rounded mr-2">Cancelar</button>
+                    <button (click)="enviarFormularioReserva()"
+                        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Crear</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- Modal Detalle oculto por defecto -->
+    <div *ngIf="!crearOcultoHuespedes" id="modal" class="fixed inset-0 flex items-center justify-center w-[90%] z-50">
+        <!-- Fondo semitransparente -->
+        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+        <!-- Contenedor del modal -->
+        <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+            <!-- Contenido del modal -->
+            <div class="modal-content py-4 text-left px-6 flex flex-col">
+                <!-- Título del modal -->
+                <div class="modal-header flex flex-row items-center">
+                    <h3 class="text-lg font-semibold">Crear Nueva Reserva</h3>
+                    <button (click)="cerrarModalHuespedes()" id="closeModal"
+                        class="modal-close my-3 ml-auto top-0 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">X</button>
+                </div>
+
+                <!-- Cuerpo del modal: Formulario -->
+                <form class="grid grid-cols-2 gap-4">
+                    <ng-container *ngFor="let huesped of reserva.huespedes; let i = index">
+                        <div>
+                            <label for="tipo_documento_{{i}}" class="block text-gray-700">Tipo Documento</label>
+                            <input id="tipo_documento_{{i}}" type="text" [(ngModel)]="huesped.tipo_documento_huesped"
+                                name="tipo_documento_{{i}}" required
+                                class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="documento_{{i}}" class="block text-gray-700">Documento</label>
+                            <input id="documento_{{i}}" type="text" [(ngModel)]="huesped.documento_huesped"
+                                name="documento_{{i}}" required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="nombre_{{i}}" class="block text-gray-700">Nombre</label>
+                            <input id="nombre_{{i}}" type="text" [(ngModel)]="huesped.nombre_huesped"
+                                name="nombre_{{i}}" required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="apellido_{{i}}" class="block text-gray-700">Apellido</label>
+                            <input id="apellido_{{i}}" type="text" [(ngModel)]="huesped.apellido_huesped"
+                                name="apellido_{{i}}" required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                    </ng-container>
+                </form>
+                <button (click)="agregarHuesped()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Agregar
+                    Huésped</button>
+
+                <!-- Footer del modal -->
+                <div class="modal-footer flex justify-end">
+                    <button (click)="cerrarModal()"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 rounded mr-2">Cancelar</button>
+                    <button (click)="crearReserva()"
+                        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Crear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Detalle oculto por defecto -->
+    <div *ngIf="!crearOculto" id="modal" class="fixed inset-0 flex items-center justify-center w-[90%] z-50">
+        <!-- Fondo semitransparente -->
+        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+        <!-- Contenedor del modal -->
+        <div class="modal bg-stone-200 w-12/12 mx-auto rounded shadow-lg z-50 overflow-y-auto">
+            <!-- Contenido del modal -->
+            <div class="modal-content py-4 text-left px-6 flex flex-col">
+                <!-- Título del modal -->
+                <div class="modal-header flex flex-row items-center">
+                    <h3 class="text-lg font-semibold">Crear Nueva Reserva</h3>
+                    <button (click)="cerrarModal()" id="closeModal"
+                        class="modal-close my-3 ml-auto top-0 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">X</button>
+                </div>
+
+                <!-- Cuerpo del modal: Formulario -->
+                <div class="modal-body">
+                    <form (ngSubmit)="enviarFormularioReserva()" class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="codigo_reserva" class="block text-gray-700">Código Reserva</label>
+                            <input id="codigo_reserva" type="text" [(ngModel)]="reserva.codigo_reserva"
+                                name="codigo_reserva" required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="checkin_reserva" class="block text-gray-700">Check-in</label>
+                            <input id="checkin_reserva" type="date" [(ngModel)]="reserva.checkin_reserva"
+                                name="checkin_reserva" required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="checkout_reserva" class="block text-gray-700">Check-out</label>
+                            <input id="checkout_reserva" type="date" [(ngModel)]="reserva.checkout_reserva"
+                                name="checkout_reserva" required
+                                class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="cantidad_habitaciones_reservas" class="block text-gray-700">Cantidad de
+                                Habitaciones</label>
+                            <input id="cantidad_habitaciones_reservas" type="number"
+                                [(ngModel)]="reserva.cantidad_habitaciones_reservas"
+                                name="cantidad_habitaciones_reservas" required
+                                class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="precio_por_habitacion_reserva" class="block text-gray-700">Precio por
+                                Habitación</label>
+                            <input id="precio_por_habitacion_reserva" type="number"
+                                [(ngModel)]="reserva.precio_por_habitacion_reserva" name="precio_por_habitacion_reserva"
+                                required class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="precio_total_reserva" class="block text-gray-700">Precio Total</label>
+                            <input id="precio_total_reserva" type="number" [(ngModel)]="reserva.precio_total_reserva"
+                                name="precio_total_reserva" required
+                                class="border border-gray-300 px-4 py-2 rounded w-full">
+                        </div>
+                        <div>
+                            <label for="habitaciones" class="block text-gray-700">Habitaciones</label>
+                            <select id="habitaciones" [(ngModel)]="reserva.habitaciones_seleccionadas"
+                                name="habitaciones" multiple class="border border-gray-300 px-4 py-2 rounded w-full">
+                                <option *ngFor="let habitacion of habitaciones" [value]="habitacion.id_habitacion">
+                                    {{ habitacion.numero_habitacion }}
+                                </option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Footer del modal -->
+                <div class="modal-footer flex justify-end">
+                    <button (click)="cerrarModal()"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-2 px-4 rounded mr-2">Cancelar</button>
+                    <button (click)="enviarFormularioReserva()"
+                        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded">Crear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="sinReservas" class="flex items-center justify-center w-full h-full bg-gray-100 p-4">
+        <div class="text-center bg-white p-8 rounded-lg shadow-lg">
+            <p class="text-2xl font-semibold text-gray-700">No se han agregado reservas
+        </div>
+    </div>
 
 </div>

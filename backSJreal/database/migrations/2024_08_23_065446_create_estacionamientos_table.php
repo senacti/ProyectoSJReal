@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('credenciales', function (Blueprint $table) {
-            $table->integer('id_credencial', true);
-            $table->integer('credencial_id_rol')->index('fk_roles_has_usuarios_roles1');
-            $table->integer('credencial_id_user')->index('fk_credenciales_users1');
+        Schema::create('estacionamientos', function (Blueprint $table) {
+            $table->integer('id_estacionamiento', true);
+            $table->string('codigo_estacionamiento', 20);
+            $table->string('estado_estacionamiento', 20);
+            $table->string('tipo_estacionamiento', 20);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('credenciales');
+        Schema::dropIfExists('estacionamientos');
     }
 };

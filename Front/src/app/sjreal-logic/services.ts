@@ -47,6 +47,52 @@ export class Services {
 
     /**
      * 
+     * HABITACIONES
+     * 
+     */
+
+    getHabitacion() {
+        return this.http.get(`${URL}/habitacion`);
+    }
+
+    postHabitacion(data: any){
+        console.log(data);
+        return this.http.post(`${URL}/habitacion`, data);
+    }
+
+    /**
+     * 
+     * RESERVAS
+     * 
+     */
+
+    getReservas(){
+        return this.http.get(`${URL}/reserva`);
+    }
+
+    postReserva(data: any){
+        console.log(data);
+        return this.http.post(`${URL}/reserva`, data);
+    }
+
+    /**
+     * 
+     * INVENTARIOS
+     * 
+     */
+
+    getInventarios(){
+        return this.http.get(`${URL}/inventario`);
+    }
+
+    postInventarios(data: any){
+        console.log(data);
+        return this.http.post(`${URL}/inventario`, data);
+    }
+
+
+    /**
+     * 
      * USERS
      *  
      */

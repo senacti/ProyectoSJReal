@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('habitaciones', function (Blueprint $table) {
             $table->integer('id_habitacion', true);
-            $table->integer('habitacion_id_sucursal')->index('fk_habitaciones_sucursales1');
             $table->string('habitacion_tipo', 30);
             $table->string('numero_habitacion', 3);
             $table->text('descripcion_habitacion');
             $table->integer('capacidad_habitacion');
-            $table->tinyInteger('status_habitacion');
+            $table->string('status_habitacion', 30);
             $table->double('precio_habitacion', null, 0);
             $table->string('estado_aseo', 45);
             $table->timestamps();

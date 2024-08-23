@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('inventarios', function (Blueprint $table) {
             $table->integer('id_inventario', true);
-            $table->integer('inventario_id_sucursal')->index('fk_sucursal_has_inventario_sucursales1');
             $table->integer('inventario_id_producto')->index('fk_inventarios_productos1');
             $table->integer('cantidad_inventario');
             $table->string('nombre_inventario', 45);

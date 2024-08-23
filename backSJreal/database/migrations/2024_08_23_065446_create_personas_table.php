@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer('id_persona', true);
             $table->string('nombre_persona', 45);
             $table->string('apellido_persona', 55);
-            $table->string('documento_persona', 20);
+            $table->string('documento_persona', 20)->unique('documento_persona_unique');
             $table->string('telefono_persona', 10);
             $table->string('correo_persona', 70);
             $table->string('tipo_documento', 30);

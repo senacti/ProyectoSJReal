@@ -27,7 +27,8 @@ export class CategoriaComponent implements OnInit {
           this.sinCategorias  =  true;
           
          }else{
-          this.categorias =res.data
+          this.categorias =res.data;
+          this.sinCategorias  =  false;
          }
       },
       error: (e:any) => console.log(e)
@@ -67,6 +68,7 @@ export class CategoriaComponent implements OnInit {
     const sub2 = this._services.postCategoria(this.categoria).subscribe({
       next:(res:any) => {
          console.log(res);
+         this.ngOnInit();
       },
       error: (e:any) => console.log(e)
     });

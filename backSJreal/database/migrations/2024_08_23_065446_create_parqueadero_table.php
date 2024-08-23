@@ -15,10 +15,9 @@ return new class extends Migration
             $table->integer('id_parqueadero', true);
             $table->integer('parqueadero_id_vehiculo')->index('fk_parqueadero_vehiculos1');
             $table->integer('parqueadero_id_reserva')->index('fk_parqueadero_reservas1');
-            $table->string('code', 5);
-            $table->tinyInteger('status');
-            $table->dateTime('entrada');
-            $table->dateTime('salida');
+            $table->integer('parqueadero_id_estacionamiento')->index('fk_parqueadero_estacionamientos1');
+            $table->dateTime('fecha_parqueadero');
+            $table->string('estado_parqueadero', 20);
             $table->timestamps();
             $table->softDeletes();
         });

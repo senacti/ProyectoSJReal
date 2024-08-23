@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('habitaciones', function (Blueprint $table) {
-            $table->foreign(['habitacion_id_sucursal'], 'fk_habitaciones_sucursales1')->references(['id_sucursal'])->on('sucursales')->onUpdate('cascade')->onDelete('cascade');
+        Schema::table('usuarios', function (Blueprint $table) {
+            $table->foreign(['usuario_id_persona'], 'fk_users_personas1')->references(['id_persona'])->on('personas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('habitaciones', function (Blueprint $table) {
-            $table->dropForeign('fk_habitaciones_sucursales1');
+        Schema::table('usuarios', function (Blueprint $table) {
+            $table->dropForeign('fk_users_personas1');
         });
     }
 };

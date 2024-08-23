@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->integer('id_rol', true);
-            $table->string('nombre_rol', 50);
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('contratos', function (Blueprint $table) {
+            $table->foreign(['contrato_id_usuario'], 'fk_contratos_usuarios1')->references(['id_user'])->on('usuarios')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::table('contratos', function (Blueprint $table) {
+            $table->dropForeign('fk_contratos_usuarios1');
+        });
     }
 };

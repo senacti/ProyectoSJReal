@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\HabitacionController;
+use App\Http\Controllers\lnventarioController;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Http\Request;
@@ -32,6 +35,15 @@ Route::get('/categoria', [CategoriaController::class, 'index']);
 
 Route::post('/productos', [ProductoController::class, 'store']);
 Route::get('/productos', [ProductoController::class, 'index']);
+
+Route::post('/habitacion', [HabitacionController::class, 'store']);
+Route::get('/habitacion', [HabitacionController::class, 'index']);
+
+Route::post('/reserva', [ReservaController::class, 'store']);
+Route::get('/reserva', [ReservaController::class, 'index']);
+
+Route::post('/inventario', [lnventarioController::class, 'store']);
+Route::get('/inventario', [lnventarioController::class, 'index']);
 // Route::post('/usuarios', [UsuarioController::class, 'store']);
 // Route::get('/usuarios/{id}', [UsuarioController::class, 'show']);
 
