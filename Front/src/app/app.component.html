@@ -1,3 +1,74 @@
-<app-header></app-header> 
-<router-outlet />
-<app-footer></app-footer>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+<div class="body-container">
+    <img src="assets/images/habitacion_beige.jpg" alt="Fondo" class="background-image">
+
+    <header class="">
+        <nav class="header-nav">
+            <div class="logo nav-item">
+                <a href="">
+                    <img src="assets/images/Logo-proyecto(1).png" alt="Logo del hotel">
+                    <h1>Hotel San Jose Real</h1>
+                </a>
+            </div>
+    
+            <div class="nav-item">
+                <ul class="nav-item--hl">
+                    <li>
+                        <a href="#inicio" >
+                            <span>Inicio</span>
+                        </a>        
+                    </li>
+                    <li>
+                        <a href="#alojamiento" >Alojamiento</a>
+                    </li>
+                    <li>
+                        <a href="#ofertas" >Ofertas</a>
+                    </li>
+                    <li>
+                        <a href="#servicios" >Servicios</a>
+                    </li>
+    
+                </ul>
+                <ul class="nav-item--hl">
+                    <li>
+                        <a href="#faqs" >FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#galeria" >Galería</a>
+                    </li>
+                    <li>
+                        <a href="#nosotros" >Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="nav-item">
+                <a href="">
+                    <img src="assets/images/perfilblanco.png" alt="Perfil" class="h-8 w-8">
+                    <span>Inicia sesion  </span>
+                    <span>Registrarse</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+  
+  
+  
+  <div class="content">
+    <div id="fecha-reserva">
+      <form id="form-fechas">
+        <div class="date-wrapper">
+          <label for="check-in">Entrada</label>
+          <input type="date" id="check-in" name="check-in" required>
+        </div>
+        <div class="date-wrapper">
+          <label for="check-out">Salida</label>
+          <input type="date" id="check-out" name="check-out" required>
+        </div>
+        <button type="button" id="boton-reserva" disabled>RESERVAR</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  

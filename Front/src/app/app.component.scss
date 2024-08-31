@@ -1,0 +1,28 @@
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 auto;
+}
+
+.logo > a > img {
+    width: 5em;
+    height: 5em;
+    margin: 0 auto;
+}
+
+div > a > img {
+    width: 5em;
+    height: 5em;
+    margin: 0 auto;
+}
+
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item--hl {
+    display: flex;
+}
