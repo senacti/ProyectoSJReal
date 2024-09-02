@@ -14,8 +14,7 @@ use Illuminate\Http\Request;
 class PersonaRepository extends BaseRepository
 {
 
-    public function __construct(Persona $model,
-                                )
+    public function __construct(Persona $model,)
     {
         parent::__construct($model);
 

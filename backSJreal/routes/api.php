@@ -26,9 +26,16 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('/personas', [PersonaController::class, 'store']);
-Route::post('/roles', [RolController::class, 'store']);
-Route::post('/register', [PersonaController::class, 'store']);
+// Route::post('/personas', [PersonaController::class, 'store']);
+// Route::post('/roles', [RolController::class, 'store']);
+// Route::post('/register', [PersonaController::class, 'store']);
+
+Route::controller(PersonaController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+});
 
 Route::post('/categoria', [CategoriaController::class, 'store']);
 Route::get('/categoria', [CategoriaController::class, 'index']);
@@ -47,7 +54,7 @@ Route::get('/inventario', [lnventarioController::class, 'index']);
 // Route::post('/usuarios', [UsuarioController::class, 'store']);
 // Route::get('/usuarios/{id}', [UsuarioController::class, 'show']);
 
-Route::group(['namespace' => 'App\Http\Controllers'], function () {
-    Route::get('usuarios/{id}', 'UsuarioController@show');
-    Route::post('usuarios','UsuarioController@store');
-});
+// Route::group(['namespace' => 'App\Http\Controllers'], function () {
+//     Route::get('usuarios/{id}', 'UsuarioController@show');
+//     Route::post('usuarios','UsuarioController@store');
+// });
