@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/backSJreal/tests/Unit" />
         <option value="$PROJECT_DIR$/backSJreal/tests/Feature" />
+        <option value="$PROJECT_DIR$/sjreal/tests/Unit" />
+        <option value="$PROJECT_DIR$/sjreal/tests/Feature" />
       </list>
     </option>
   </component>
