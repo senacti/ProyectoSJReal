@@ -57,15 +57,19 @@ class GuestController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $guest = Guest::where('id', $id)->first();
+        return view('guest.edit')->with('guest', $guest);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(string $id)
     {
-        //
+        $guest = Guest::where('id', $id)->first();
+        $values = \request()->only(['name_guest', 'lastname_guest', 'doc_guest', 'num_doc_guest', 'origin_guest', 'phone_guest']);
+        $guest->update($values);
+        redirect()->route('guest.index', ['guests' => Guest::all()]);
     }
 
     /**
