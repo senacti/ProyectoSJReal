@@ -1,13 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
-<form action="{{ route('guest.store') }}" class="w-4/5 border-gray-100 rounded-sm" method="post">
+@extends('layouts.app')
+@section('content')
+    <h2 class="">Añadir un huesped</h2>
+    <form action="{{ route('guest.store') }}" class="w-4/5 border-gray-100 rounded-sm" method="post">
     @csrf
     {{--  Campos: Nombre, apellido, documento, nro documento, origen (nacionalidad), telefono  --}}
     <ul class="flex flex-col gap-2 mx-auto my-2">
@@ -45,6 +39,5 @@
         </li>
     </ul>
 </form>
-</body>
-</html>
+@endsection
 

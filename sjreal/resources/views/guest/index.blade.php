@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <table>
-        <caption>Tabla de huespedes <a href="">Agregar</a></caption>
+        <caption>Tabla de huespedes <a href="{{ route('guest.create') }}">Agregar</a></caption>
         <thead>
             <tr>
                 <th>Nombre</th>

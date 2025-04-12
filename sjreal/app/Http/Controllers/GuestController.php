@@ -47,9 +47,11 @@ class GuestController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id = null)
     {
-        //
+        $id = \request()->only(['num_doc_guest']);
+        $guest = Guest::where('num_doc_guest', $id)->first();
+        return view('guest.show')->with('guest', $guest);
     }
 
     /**
