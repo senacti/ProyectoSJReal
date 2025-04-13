@@ -8,6 +8,12 @@
       <sourceFolder url="file://$MODULE_DIR$/backSJreal/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/backSJreal/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/backSJreal/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/sjreal/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/sjreal/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/sjreal/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/sjreal/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/sjreal/tests/Feature" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/sjreal/tests/Unit" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/backSJreal/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/backSJreal/vendor/carbonphp/carbon-doctrine-types" />
       <excludeFolder url="file://$MODULE_DIR$/backSJreal/vendor/composer" />
@@ -121,6 +127,117 @@
       <excludeFolder url="file://$MODULE_DIR$/backSJreal/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/backSJreal/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/backSJreal/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/fruitcake/php-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/guzzlehttp/uri-template" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/laravel/pail" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/laravel/pint" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/laravel/prompts" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/laravel/sail" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/league/flysystem-local" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/league/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/league/uri-interfaces" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/nunomaduro/termwind" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/staabm/side-effects-detector" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/polyfill-uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/uid" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/sjreal/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
