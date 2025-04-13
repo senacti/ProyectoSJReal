@@ -1,5 +1,5 @@
 # Proyecto SJReal
-Este proyecto es una aplicación web desarrollada con Laravel 10.0 para el backend y Angular 17 para el frontend. El desarrollo del software se enfoca en facilitar los modulos de inventario, hospedaje y ventas del hotel sjReal inncluyendo el modulo de PQRS.
+Este proyecto es una aplicación web desarrollada con Laravel 10.0. El desarrollo del software se enfoca en facilitar los modulos de inventario, hospedaje y ventas del hotel sjReal inncluyendo el modulo de PQRS.
 
 ## Tabla de Contenidos
 
