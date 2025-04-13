@@ -31,11 +31,11 @@
                         </a>
                     </td>
                     <td>
-                        <a href="{{ route('guest.destroy', ['guest' => $guest->id]) }}">
-                            <span  class="material-symbols-outlined">
-                                delete
-                            </span>
-                        </a>
+                        <form action="{{ route('guest.destroy', $guest) }}" method="POST">
+                            @csrf 
+                            @method('DELETE')
+                            <input type="submit" value="Eliminar" class="material-symbols-outlined cursor-pointer">
+                        </form>
                     </td>
                 </tr>
             @empty
