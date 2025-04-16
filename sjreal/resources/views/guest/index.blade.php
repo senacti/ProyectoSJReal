@@ -32,9 +32,12 @@
                     </td>
                     <td>
                         <form action="{{ route('guest.destroy', $guest) }}" method="POST">
-                            @csrf 
+                            @csrf
                             @method('DELETE')
                             <input type="submit" value="Eliminar" class="material-symbols-outlined cursor-pointer">
+                            <span  class="material-symbols-outlined">
+                                delete
+                            </span>
                         </form>
                     </td>
                 </tr>
